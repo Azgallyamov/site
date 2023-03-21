@@ -1,0 +1,897 @@
+body{
+    margin: 0;
+    font-family: 'Montserrat',sans-serif;
+    
+    font-size: 15px;
+    line-height: 1.6;
+    color:#333;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+
+/*Container*/
+.container {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/*Intro*/
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    min-height: 820px;
+    position: relative;
+    
+    background: 
+    url("../images/intro..jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;      
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    
+    text-align: center;
+}
+
+.intro__title {
+    color: #333;
+    font-size: 150px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.intro__title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 60px auto ;
+    
+    background-color: #f38181;
+}
+
+.intro__suptitle {
+    margin-bottom: 20px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 72px;
+    color: #333;
+
+}
+
+
+
+
+/* Header */
+.header {
+    width: 100%;
+    padding-top: 30px;
+        
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 1000;   
+}
+ 
+.header--fixed {
+    padding: 10px 0;
+  background-color: #abcdef; 
+    box-shadow: 0 4px 10px rgba(0,0,0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    transform: translate3d(0,0,0);
+    
+}
+
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;     
+}
+
+
+/* Nav*/
+
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+    position: relative;
+    
+    color: #333;
+    text-decoration: none;
+    
+    transition: color .1s linear;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #BA55D3;
+    opacity: 0;
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    color: #BA55D3;
+}
+
+.nav__link:hover:after {
+    opacity: 1;
+}
+
+
+/* Button */
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 30px;
+    
+    border: 3px solid #fff;
+    
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none; 
+    
+    transition: background .1s
+    linear, color .1s linear;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #BA55D3;
+}
+
+
+
+
+/* Section */
+.section {
+    padding: 80px 0;
+}
+
+.section__header {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto 40px;
+   
+    text-align: center;
+}
+
+.section__suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    color: #333;
+}
+
+.section__title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.section__title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 30px auto ;
+    
+    background-color: #f38181;
+}
+
+.section__text {
+    font-size: 15px;
+    color: #808080;
+}
+
+
+/*About*/
+.about {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.about__item {
+    width: 380px;
+    position: relative;
+    
+    background-color: #95e1d3;
+}
+
+.about__item:hover .about__img {
+    transform: translate3d(-10px, -10px, 0);
+}
+
+.about__item:hover .about__img img {
+    opacity: .1;
+}
+
+.about__item:hover .about__text {
+    opacity: 1;
+}
+
+.about__img {
+    background: linear-gradient(to bottom, #f38181, #fce38a);
+    
+    transition: transform .2s linear;
+}
+
+.about__img img {
+    display: block;
+    transition: opacity .1s linear;
+}
+
+
+.about__text {
+    width: 100%;
+    
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    opacity: 0;
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0, -50%, 0);
+    
+    transition: opacity .2s linear;
+    
+}
+
+/*Statistics */
+.statistics {
+    background-color: #95e1d3;
+}
+
+.stat {
+    display: flex;
+}
+
+.stat__item {
+    flex: 1 1 0;
+    padding: 70px 25px;
+    
+    border-left: 1px solid #b5eae0;
+    
+    text-align: center;
+    color: #fff;
+}
+
+.stat__item:last-child {
+    border-right: 1px solid #b5eae0;
+}
+
+.stat__count {
+    margin-bottom: 10px;
+    
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat__text {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+
+/*Textcols*/
+.textcols {
+	white-space: nowrap;
+}
+.textcols-item {
+	white-space: normal;	
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+    
+     padding: 70px 25px;
+    
+    border-right: 1px solid #b5eae0;
+ 
+    text-align: center;
+	background: 	#fff2e1;
+    color: 	#808080;
+}
+.textcols .textcols-item:first-child {
+	margin-right: 4%;
+}
+
+.textcols {
+	
+	white-space : nowrap;
+	
+
+
+}
+
+.textcols {
+	white-space: nowrap;
+}
+.textcols-row {
+	 display: table-row;
+}
+.textcols-item {
+	display: inline-block;	
+	width: 50%;
+	vertical-align: top;
+   color: #333;
+	 padding: 70px 25px;
+    
+    border-left: 1px solid #b5eae0;
+    
+	background: #fff;
+}
+.textcols-row .textcols-item:first-child {
+	border-right: 30px solid #fff;
+}
+.textcols-row .textcols-item:last-child {
+	border-left: 30px solid #fff;
+}
+
+
+/* Line */
+ .line {
+    border-bottom: 10px solid #95e1d3;
+}
+   
+.leftimg {
+    float:right; /* Выравнивание по левому краю */
+    margin: 7px 0 7px 7px ; 
+    margin-left: 7%;
+    margin-top: 4%;
+    margin-right: 13%;
+    /* margin-bottom: 10%; */
+}
+
+/* Line */
+ .line1 {
+    border-bottom: 3px solid #95e1d3 ;
+}
+  
+  
+.rightimg {
+    float:left; /* Выравнивание по правому краю */
+    margin: 7px 0 7px 7px ; 
+    margin-left: 13%;
+    margin-top: 4%;
+    margin-right: 7%;
+   /*margin-bottom: 10%; */
+}
+
+       
+
+/*Title*/
+.text1 {
+    float: right;
+  margin-bottom: 60px;
+   margin-top: 0 ;
+
+}
+  
+.text1__suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 34px;
+    color: #333;
+    /* margin-right: 50%; */
+    /* margin-left: 15%; */
+    /* margin-top: 7%; */
+    
+}
+
+.text1__title {
+   font-size: 18px;
+    font-weight: 400;
+   margin-right: 50%;
+    margin-left: 15%;
+    margin-top: 4.5%;
+    margin-bottom: 7%;
+}
+  
+
+
+.text1__text {
+    font-size: 20px;
+    color: #808080;
+}
+    
+    
+
+     
+
+
+
+
+
+
+/*Title*/
+.text5 {
+    float: right;
+  margin-bottom: 60px;
+   margin-top: 0 ;
+
+}
+  
+.text5__suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 28px;
+    color: #333;
+    /* margin-right: 15%; */
+    /* margin-left: 50%; */
+    /* margin-top: 1%; */
+    
+    
+}
+
+.text5__title {
+   font-size: 18px;
+    font-weight: 400;
+   margin-right: 15%;
+    margin-left: 50%;
+    margin-top: 4.5%;
+    margin-bottom: 7%;
+}
+  
+
+
+.text5__text {
+    font-size: 20px;
+    color: #808080;
+}
+    
+    
+
+ /* Line */
+ .line2 {
+    border-bottom: 3px solid #95e1d3 ;
+}
+      
+
+
+
+/* Section */
+.section3 {
+    padding:  80px 0;
+ 
+}
+
+.section3__header {
+    width: 100%;
+    max-width: 1150px;
+    margin:  0.5em  20% 5px;
+       text-align: center;
+}
+
+.section3__suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 32px;
+    color: #333;
+
+    
+}
+
+
+
+
+
+
+ #title1,  #title3, #col1,  #col3 { /* 1 */
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+    font-size: 22px;
+    color: black;
+    width: 280px;
+    border: 1px solid black;
+      text-align: center;
+     
+   }
+   #col1, #col2, #col3 { /* 2 */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: normal;
+    color: black;
+       width: 280px;
+     
+        text-align: center;
+       margin-bottom: 10%;
+   }
+#title2 {
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+font-size: 22px;
+color: black;
+width: 370px;
+border: 1px solid black;
+    text-align: center;
+
+}
+
+#col2 {
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+font-size: 18px;
+font-weight: normal;
+color: black;
+top: 60px;
+padding: 35px;
+width: 370px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+   #col1, #title1 { /* 3 */
+    position: absolute;
+       left: 460px;
+   }
+   #col2, #title2 { /* 4 */
+    position: relative;
+    left: 790px;
+   }
+   #col3, #title3 { /* 5 */
+    position: relative;
+    left: 1200px;
+   }
+   #col1, #col2, #col3 { /* 6 */
+    top: 5px;
+   }
+   .tr { /* 7 */
+    position: absolute;
+   }
+   p { margin: 5px; }
+   #title1 { background-color:#f4dbef;
+border-color: #f38181; }
+#title2 {background-color: #dbeef4;
+border-color: #478ac9;}
+#title3 { background-color:#f4dbef;
+border-color: #C364C5; }
+#col1 { background-color:#f4dbef;
+border-color: #f38181; }
+#col2 {background-color: #dbeef4;
+border-color: #478ac9;}
+#col3 { background-color:#f4dbef;
+border-color: #C364C5; }
+
+
+
+
+
+
+
+
+
+.statistics1 {
+    background-color: #b5eae0;
+    margin-bottom: 0px;
+}
+
+.stat1 {
+    display: flex;
+}
+
+.stat1__item {
+    flex: 1 1 0;
+    padding: 70px 25px;
+    
+    border-left: 1px solid #95e1d3;
+    
+    text-align: center;
+    color: #464544;
+}
+
+.stat1__item:last-child {
+    border-right: 1px solid #b5eae0;
+}
+
+.stat1__count {
+    margin-bottom: 10px;
+       font-size: 44px;
+    font-weight: 650;
+    line-height: 1;
+}
+
+.stat2__count {
+  margin-left: 9%;
+    margin-right: 2%;
+    margin-bottom:30px;
+    margin-top: 5px;
+    font-size: 44px;
+    font-weight: 650;
+    line-height: 1;
+}
+.stat1__text {
+    font-size: 22px;
+    text-transform: uppercase;
+  
+
+}
+
+
+.stat2__text {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-right: 9%;
+    margin-left: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* В body устанавливаем шрифт, ширину и высоту, а также фон */
+body5 {
+font-family: "Roboto", sans-serif;
+font-size: 16px;
+line-height: 1.2;
+width: 100%;
+min-height: 100vh;
+background: linear-gradient(100deg, #fff1eb, #c9f5f3);
+display: flex;
+justify-content: center; /* чтобы контейнер */
+align-items: center; /* был по центру */
+    
+}
+
+/* Ограничиваем контейнер по ширине 1000px */
+.container5 {
+width: 100%;
+max-width: 1000px;
+padding: 0 20px;
+}
+
+/* Стили самой формы */
+.content5 {
+display: flex; /* делаем колонки в ряд */
+align-items: center; /* выравниваем по центру */
+justify-content: space-between; /* колонки растянутся на всю ширину */
+background: #fff;
+padding: 40px;
+border-radius: 5px;
+box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+/* Стили левой колонки */
+.left-side {
+width: 25%; /* занимает 25% общей ширины */
+height: 100%; /* растягиваем на всю высоту */
+position: relative; /* позиционирование относительное (для ::before) */
+display: flex;
+flex-direction: column; /* внутри элементы располагаем в колонку */
+}
+
+/* Стили разделительной линии между левой и правой колонкой */
+.left-side::before {
+content: ""; /* контент нам не нужен */
+position: absolute; /* позиционируем относительно .left-side */
+height: 70%; /* высота 70% от .left-side */
+width: 2px; /* ширина 2px */
+background: #afafb6;
+right: -15px; /* позиционируем справа + отступ 15px (справа) */
+top: 50%; /* выравниваем по центру */
+transform: translateY(-50%); /* выравниваем по центру */
+}
+
+/* Стили правой колонки */
+.right-side {
+width: 75%; /* занимает 75% общей ширины */
+margin-left: 75px;
+}
+
+/* Элементы левой колонки: адрес, телефон, email */
+.details {
+margin-bottom: 15px;
+text-align: center;
+}
+
+/* Общие стили для иконок */
+.details i {
+font-size: 25px; /* задаем размер */
+color: #00BFFF; /* задаем цвет */
+margin-bottom: 10px;
+}
+
+/* Стили для заголовков левой колонки */
+.topic {
+font-size: 18px;
+font-weight: 500;
+margin-bottom: 7px; /* отступ снизу 7px */
+}
+
+/* Стили для текста левой колонки */
+.text-one,
+.text-two {
+font-size: 14px;
+color: #afafb6;
+}
+
+/* Заголовок правой колонки */
+.topic-text {
+font-size: 23px;
+font-weight: 600;
+color: #00BFFF;
+margin-bottom: 10px;
+}
+
+/* Текст правой колонки */
+.right-side p {
+margin-bottom: 20px;
+}
+
+/* Контейнер для input'ов формы */
+.input-box {
+height: 50px;
+width: 100%;
+margin-bottom: 30px;
+}
+
+/* Стили для input и textarea (поле сообщение) */
+.input-box input,
+.input-box textarea {
+height: 100%;
+width: 100%;
+border: none;
+border-radius: 5px;
+background: #f0f1f8;
+padding: 0 20px;
+margin-bottom: 3px;
+}
+
+
+.input-box label {
+font-size:14px;
+color: #afafb6;
+padding-left: 5px;
+}
+
+
+/* Отдельно стилизуем поле сообщение */
+.input-box textarea {
+resize: none; /* чтобы нельзя было менять высоту */
+padding: 20px;
+font-family: "Roboto", sans-serif;
+}
+
+/* Это контейнер для поля сообщение */
+.message-box {
+min-height: 110px; /* минимальная высота 110px */
+}
+
+/* Стили для контейнера кнопки */
+.button {
+display: inline-block; /* делаем блочно-строчный элемент */
+
+}
+
+/* Стили для самой кнопки */
+.button input[type="button"] {
+color: #fff;
+font-size: 18px;
+background-color: #95e1d3;
+color: #333;
+text-transform: uppercase;
+text-decoration: none;
+
+transition: background .1s
+linear, color .1s linear;
+
+outline: none;
+border: none;
+padding: 10px 20px;
+border-radius: 7px;
+transition: 0.2s; /* чтобы плавно менялся цвет при наведении (:hover) */
+}
+/* Меняем цвет фона при наведении на кнопку */
+.button input[type="button"]:hover {
+background: rgb(0, 0, 207);
+background-color: #BA55D3;
+color: #95e1d3;
+}
+
+
+.button-style {
+  background-color: #00BFFF;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.button-style:hover {
+  background-color: #00CED1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1230px ) {
+    /*Intro*/
+    .intro__siptitle {
+        font-size: 52px;
+    }
+    .intro__title {
+        font-size: 120px;
+    }
+}
+
+
+@media (max-width: 990px ) {
+    /*Intro*/
+    .intro__siptitle {
+        font-size: 32px;
+    }
+    .intro__title {
+        font-size: 80px;
+    }
+}
